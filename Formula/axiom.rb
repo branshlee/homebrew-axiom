@@ -1,20 +1,20 @@
 class Axiom < Formula
   desc "Experimental intelligence architecture: discovers, folds and re-represents executable laws"
   homepage "https://github.com/branshlee/homebrew-axiom"
-  version "0.1.1"
+  version "0.1.2"
   license :cannot_represent
 
   on_macos do
     on_arm do
-      url "https://github.com/branshlee/homebrew-axiom/releases/download/v0.1.1/axiom-0.1.1-aarch64-apple-darwin.tar.gz"
-      sha256 "a03e9a023aae43ed5e72aa204bf93ec875806665a917c5057ebdff7e235b2203"
+      url "https://github.com/branshlee/homebrew-axiom/releases/download/v0.1.2/axiom-0.1.2-aarch64-apple-darwin.tar.gz"
+      sha256 "fe2ba8456b8097f3137a845323e45e7d493a32f033f616f882d86eab6694c08c"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/branshlee/homebrew-axiom/releases/download/v0.1.1/axiom-0.1.1-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "a49414f4710bd8b73e792dacd631a51854701197a05087a2a7f31300d3a44bc3"
+      url "https://github.com/branshlee/homebrew-axiom/releases/download/v0.1.2/axiom-0.1.2-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "7ebdcf41fbbfeb47e0d2a03167ee244ed0742399c644041605dea3a1f0723869"
     end
   end
 
