@@ -3,6 +3,9 @@ class Axiom < Formula
   homepage "https://github.com/branshlee/homebrew-axiom"
   version "0.1.5"
   license :cannot_represent
+  # default (macOS Apple Silicon); Linux overrides below
+  url "https://github.com/branshlee/homebrew-axiom/releases/download/v0.1.5/axiom-0.1.5-aarch64-apple-darwin.tar.gz"
+  sha256 "484a84370cc491bc2eb872fb850e61061e66c0d70ec93fe15f9656d591b1993e"
 
   on_macos do
     on_arm do
