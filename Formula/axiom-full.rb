@@ -1,7 +1,7 @@
 class AxiomFull < Formula
   desc "Axiom with a knowledge snapshot: start from what an instance has already learned"
   homepage "https://github.com/branshlee/homebrew-axiom"
-  url "https://github.com/branshlee/homebrew-axiom/releases/download/v0.1.1/axiom-knowledge-0.1.1tar.gz"
+  url "https://github.com/branshlee/homebrew-axiom/releases/download/v0.1.1/axiom-knowledge-0.1.1.tar.gz"
   sha256 "3e346cdaf4d5b3c1e8124320b3819ac310562f24c84945e6792c149549b8f007"
   version "0.1.1"
   license :cannot_represent
