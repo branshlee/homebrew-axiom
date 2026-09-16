@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.15
+### Added
+- `--push` on `improve` and `merge`, like `evolve`.
+### Fixed
+- `sync` explains what to do when the store has no git remote, instead of
+  failing inside git; the first push sets the upstream.
+- 0.1.14 was published without these changes (tagged before the commit
+  landed); 0.1.15 carries them.
+
 ## 0.1.13
 ### Fixed
 - `axiom why <id> N` (positional depth, as in the session) is accepted in
