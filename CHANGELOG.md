@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.1.22
+### Added
+- Proposers as data: a proposer is a term (`axiom/proposer`) evaluated
+  over the evidence and the precedents; it returns a shape (symbols and
+  lists, `?a` holes, `@id` library references) that the verifier decodes,
+  fits and judges like any candidate. Every promotion leaves a template
+  proposer; templates anti-unify into folded proposers with parents
+  recorded; the best by credit run as team members (`program:<name>` in
+  the credit table; knob `program_proposers`, default 4). On the
+  evolve-team worlds the stored proposers won 8 of 11 promotions and
+  displaced the hand-written analogy member entirely.
+### Changed
+- The credit table names every member by its signature, so stored
+  proposers appear beside the built-in kinds.
+
 ## 0.1.21
 ### Added
 - Graded verdicts: a mispredicting theory whose corrections are cheap to
