@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.19
+### Added
+- Names: `axiom name <id> <text>` gives any object a name (an
+  `axiom/name` object; latest wins). Library entries are named by the
+  system when admitted ("operator folded from mod-3, mod-4, mod-5").
+- Explanations: `axiom explain <id>` renders a theory or term as a
+  sentence using variable names, operator words and library names;
+  `status` shows one for every library entry and theory. `AXIOM_LANG=zh`
+  switches the wording to Chinese.
+
 ## 0.1.18
 ### Added
 - Symbols and sequences in the value domain: `'red`, `nil`, `(a b c)`;
