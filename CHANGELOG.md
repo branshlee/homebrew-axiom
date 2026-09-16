@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.13
+### Fixed
+- `axiom why <id> N` (positional depth, as in the session) is accepted in
+  the shell form too; previously only `--depth N` was.
+
 Each version lists what changed for someone running `axiom`. Kernel changes
 are called out separately because the kernel is the trusted part.
 
