@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.24
+### Added
+- Any object set is a world: a world file may carry a `:view` naming a
+  collection of stored objects (`promotions`, `rounds`, `proposals`), an
+  input field and an output field. The view is read from the store when
+  the world is loaded, so it grows as the system works; a view that grew
+  by a held-out set's worth is claimable again. Non-scalar outputs are
+  named `s1, s2, …` for the search. `axiom view <name>` prints a view's
+  rows and symbol table.
+- The bundled `proposer-shapes` view: the system's own promotions as
+  evidence -> winning shape. A promoted law of a `:role proposer` view is
+  registered as a proposer program (`induced:<world>`), or linked to the
+  stored proposer it rediscovered (`law-as-proposer` event).
+- Rounds record `evidence_count`; view worlds may name their own search
+  config (`:search`).
+
 ## 0.1.23
 ### Added
 - Workers instead of rounds: `axiom work [--workers N] [--all | --spec S]`
