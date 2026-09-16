@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.16
+### Fixed
+- `sync` reports a missing remote before looking for changes, so it never
+  says "nothing new to publish" when nothing could have been published.
+
 ## 0.1.15
 ### Added
 - `--push` on `improve` and `merge`, like `evolve`.
