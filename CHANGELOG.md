@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.17
+### Added
+- `sync` (and every `--push`) reconciles with the remote first when the
+  remote has history this checkout lacks: the remote store's knowledge is
+  merged in (objects unioned, state re-derived, a merge object recording
+  its rounds), the event logs are combined (theirs first, then ours
+  without the shared prefix), and the commit is placed on top of the
+  remote head. Two instances that grew apart can publish to one
+  repository without conflicts and without losing either history.
+
 ## 0.1.16
 ### Fixed
 - `sync` reports a missing remote before looking for changes, so it never
