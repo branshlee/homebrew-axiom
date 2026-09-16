@@ -1,0 +1,87 @@
+# Changelog
+
+Each version lists what changed for someone running `axiom`. Kernel changes
+are called out separately because the kernel is the trusted part.
+
+## 0.1.12
+### Added
+- `axiom changelog`: what the latest published version changed.
+- `axiom update` shows the notes for the version it is about to install.
+- Release notes are published with every tap release, from this file.
+
+## 0.1.11
+### Fixed
+- Residual worlds were derived from every falsified world every round,
+  producing chains such as `divisors~1~1`. A residual world is now derived
+  only when the theory explained its synthesis evidence and failed on
+  unseen points, at most one per world, and not from residual worlds by
+  default. (0.1.10 was tagged before this change landed.)
+
+## 0.1.9
+### Fixed
+- Installed binaries since 0.1.7 could not run `evolve` in a fresh home:
+  the bundled default data was a hand-maintained list and lacked
+  `policy-default.sexp`. The list is now generated at build time.
+
+## 0.1.8
+### Added
+- Boolean rules in the policy search use a two-level grammar (integer
+  expressions, comparisons, and/or/not to depth 2).
+- Policies may carry `inquiry_seed` and `inquiry_margin` knobs; trials
+  charge gathered evidence (`:evidence_cost`); `axiom improve <spec>`.
+- Worlds implemented by external programs (`:command`); `import` from URLs.
+- After a falsified inquiry round, a passive pass over the full synthesis
+  set runs before giving up.
+### Fixed
+- Policy trials no longer write derived-world files outside their scratch
+  store.
+### Result
+- The policy search adopted its first change (`inquiry_margin = 0`) on a
+  priced-evidence spec; the prime benchmark remains open.
+
+## 0.1.7
+### Added
+- Rules as data: promotion, library admission and world scoring are terms
+  evaluated by the kernel; `data/experiments/policy-default.sexp`; every
+  round names the policy it ran under.
+- `axiom improve`: candidate rules are enumerated, tried in scratch runs,
+  scored from verifier facts only, re-checked on held-out worlds.
+- Worlds derived from residuals; solving one composes a theory that
+  explains the parent.
+
+## 0.1.6
+### Added
+- `axiom merge <store | git-url>`: object union, state re-derived by
+  folding both libraries, the other instance's rounds referenced.
+
+## 0.1.5
+### Fixed
+- `uninstall` resolved the Homebrew symlink and removed only the link.
+- Fresh `brew tap` failed the syntax check: the formula lacked a top-level
+  `url`.
+
+## 0.1.4
+### Fixed
+- `version`, `update` and `uninstall` were listed but not dispatched.
+
+## 0.1.3
+### Added
+- `axiom version`, `axiom update`, `axiom uninstall [--purge]`.
+
+## 0.1.2
+### Fixed
+- Rounds written by earlier versions failed to load (`missing field
+  "choice"`); fields added after the first release are optional on read.
+
+## 0.1.1
+### Added
+- `axiom init --from <snapshot>`; Homebrew tap with `axiom` and
+  `axiom-full`.
+
+## 0.1.0
+First release: content-addressed store, sealed term calculus with `rec`
+and pairs, cost-ordered search with observational-equivalence pruning,
+folding with reconstruction certificates, library of derived operators,
+re-representation, library compaction, active inquiry, world choice,
+multi-variable worlds, tolerance, interactive session, knowledge
+repository publishing.
