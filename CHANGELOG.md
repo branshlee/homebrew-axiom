@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.1.18
+### Added
+- Symbols and sequences in the value domain: `'red`, `nil`, `(a b c)`;
+  CSV cells `red` and `a b c`. One new kernel primitive, `fold`
+  (structural recursion over a sequence, total). Symbols seen in evidence
+  join the search alphabet; a symbol is charged `:symbol_cost`.
+- Sequence worlds and experiments: length, reverse, last, count, first.
+### Fixed
+- Sequence values are written to world files as plain lists and read back
+  identically (they were being re-wrapped on load).
+
 ## 0.1.17
 ### Added
 - `sync` (and every `--push`) reconciles with the remote first when the
