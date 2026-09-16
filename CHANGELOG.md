@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.23
+### Added
+- Workers instead of rounds: `axiom work [--workers N] [--all | --spec S]`
+  runs N workers on one store. A worker claims a world with a `claimed`
+  event (a lease, no global clock), does one unit of work, records it and
+  looks again; other workers' live claims are skipped, a claim that lost
+  the race is `released`, and a worker stops when nothing is claimable and
+  nobody holds a claim. Several processes on one store behave like
+  several threads. `status` lists claims being worked on.
+### Changed
+- The current state (library, promoted theories) is derived from every
+  round's delta (`library_before`/`library_after`, new `promoted_before`),
+  not from the last round, so rounds recorded side by side all count.
+  Rounds from older versions are read as before.
+- Rounds record `worker`. The event log is appended one line per write so
+  concurrent appenders never interleave.
+
 ## 0.1.22
 ### Added
 - Proposers as data: a proposer is a term (`axiom/proposer`) evaluated
