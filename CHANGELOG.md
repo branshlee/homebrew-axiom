@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.29
+### Changed
+- Task kinds are data. Each file in `data/tasks` names a collection of
+  rows (`worlds`, `promoted`, `library`, `groups`, `library-groups`,
+  `proposer-pairs`, `specs`), the readings it takes of a row (sensors
+  such as `status`, `residuals`, `library-changed`, `probe-gain`,
+  `fold-gain`, `rerep-gain`, `has-template`, `done`), when a row is
+  undone (a term over the readings), its gain (a term) and the action
+  that does it. The code keeps the sensors and eleven actions; which
+  tasks exist, when, and in what order is in the files. World choice is
+  the explain kind's gain (`world_score` is gone from the policy);
+  template proposers, proposer folds, view-law registration and naming
+  are tasks like the rest.
+- Fold groups: within a group of one shape, members sharing a literal at
+  some position form a subgroup of their own (one hole fewer).
+- Task keys name their subject object (`fold:<group>`,
+  `re-represent:<theory>`, `compose:<theory>`, `template:<theory>`, …).
+
 ## 0.1.28
 ### Changed
 - One law of persistence. The `promotion` rule decides alone whether a

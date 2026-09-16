@@ -1,23 +1,23 @@
 class Axiom < Formula
   desc "Experimental intelligence architecture: discovers, folds and re-represents executable laws"
   homepage "https://github.com/branshlee/homebrew-axiom"
-  version "0.1.28"
+  version "0.1.29"
   license :cannot_represent
   # default (macOS Apple Silicon); Linux overrides below
-  url "https://github.com/branshlee/homebrew-axiom/releases/download/v0.1.28/axiom-0.1.28-aarch64-apple-darwin.tar.gz"
-  sha256 "c3cc057033532412228f84bea36dd0e1eaf38d4618f79f0f7b644394c69c9a08"
+  url "https://github.com/branshlee/homebrew-axiom/releases/download/v0.1.29/axiom-0.1.29-aarch64-apple-darwin.tar.gz"
+  sha256 "c60849741f5912170a85e450cb7cba3ef30dfe97726bf4b5a1b330d72602b8b0"
 
   on_macos do
     on_arm do
-      url "https://github.com/branshlee/homebrew-axiom/releases/download/v0.1.28/axiom-0.1.28-aarch64-apple-darwin.tar.gz"
-      sha256 "c3cc057033532412228f84bea36dd0e1eaf38d4618f79f0f7b644394c69c9a08"
+      url "https://github.com/branshlee/homebrew-axiom/releases/download/v0.1.29/axiom-0.1.29-aarch64-apple-darwin.tar.gz"
+      sha256 "c60849741f5912170a85e450cb7cba3ef30dfe97726bf4b5a1b330d72602b8b0"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/branshlee/homebrew-axiom/releases/download/v0.1.28/axiom-0.1.28-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "ca9bc75c498187274afd0492020fcb41ab65f3b2bcaaaaeebb78918de67f49f3"
+      url "https://github.com/branshlee/homebrew-axiom/releases/download/v0.1.29/axiom-0.1.29-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "d6a731b0d8292f45243b88d35365c3b9593044de9e95f93f110b9c1a6278cce8"
     end
   end
 
