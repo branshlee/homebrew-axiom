@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.1.32
+### Added
+- Scale experiment tooling: `scripts/gen-worlds.py` (families of integer
+  laws with random constants, as recorded tables), `scripts/oeis-worlds.py`
+  (worlds from the public OEIS dump), `scripts/scale-report.py` (a log by
+  quarters). Results in `docs/experiments.md`.
+### Changed
+- The fitter fills a shape's holes from the evidence's own constants (its
+  integers and the differences between neighbouring outputs) as well as
+  the alphabet's; `program_proposers` default 12.
+- Fold grouping is incremental and memoised (the cubic recompute stalled
+  at 200 kept theories).
+- A theory that cannot evaluate on an input predicts nothing there (a
+  null prediction) instead of ending the round; a failing task is
+  recorded with its error instead of ending the worker; a worker panic
+  carries its message; a rule search needs its worlds to exist.
+- Trial scoring follows the single law: a kept theory costs its
+  expression plus its corrections, an unsound promotion is one kept
+  without compressing; a fresh instance's rule search takes its
+  vocabulary from the baseline trial.
+
 ## 0.1.31
 ### Changed
 - No fixed vocabulary for rules. A rule may mention any fact its
