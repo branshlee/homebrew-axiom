@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.1.26
+### Changed
+- The built-in analogy, library-first and mutate members are gone from
+  the code. They are seed proposer programs in `data/proposers/*.sexp`
+  (stored once with `by: seed`), written as terms over the environment a
+  proposer program sees: `evidence`, `precedents` (shapes of promoted
+  theories), `library` (each certified operator applied to holes),
+  `near_misses` (shapes of earlier near misses for this world). A
+  program may return one shape or a sequence of shapes; the verifier
+  fits and judges each. Enumeration is the one member that stays
+  mechanism. Default `program_proposers` is 6.
+
 ## 0.1.25
 ### Changed
 - The pipeline is gone. A unit of work is a task discovered in the store:
