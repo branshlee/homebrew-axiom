@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.21
+### Added
+- Graded verdicts: a mispredicting theory whose corrections are cheap to
+  record gets the `partial` status (rule `:partial` in the policy).
+- The proposer team (`:team true` in a spec): enumerate, analogy,
+  library-first and mutate run in parallel on the same evidence; every
+  candidate is stored as a signed `axiom/proposal`; one verifier judges;
+  credit per kind appears in `status`. Analogy takes over as soon as a
+  precedent exists, library-first as soon as the library does.
+
 ## 0.1.20
 ### Added
 - Data sources: `data/sources.sexp` lists directories of CSV files, URLs
