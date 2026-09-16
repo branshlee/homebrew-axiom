@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.28
+### Changed
+- One law of persistence. The `promotion` rule decides alone whether a
+  theory is kept; the default is now "it compresses all the evidence it
+  was shown, mispredictions charged as corrections", and zero held-out
+  error is the special case where the corrections cost nothing. The
+  `partial` status and hook are gone: a kept theory with residuals is
+  `promoted` with its residual count (shown in `status`), is retried
+  when the library changes, and leaves a residual world like any other.
+- Derivation depth is no longer a number by default: `:max_derivation_depth
+  unbounded` in `evolve-base`. A residual is a new question only if the
+  theory subtracts something; a theory that subtracts nothing ends the
+  chain. Views and non-numeric worlds are never derived.
+- Theories of one shape (equal up to literals) always form a fold group
+  of their own; greedy grouping newest-first could bury the fold that
+  compresses inside a wider one that does not.
+
 ## 0.1.27
 ### Changed
 - View projections are data. A `:view` names the events whose subjects
