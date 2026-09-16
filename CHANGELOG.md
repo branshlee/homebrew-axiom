@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.1.31
+### Changed
+- No fixed vocabulary for rules. A rule may mention any fact its
+  situation carries; the situation is recorded as data with the
+  decision (`situation` in the verdict event and in fold task records)
+  and now carries every fact the verifier established (score fields,
+  baselines, counts, candidates examined, library size, saving). The
+  vocabulary a rule search enumerates over is read from the recorded
+  situations, and task ranking sees every reading its task kind took.
+  A rule mentioning a fact its situation lacks fails when evaluated,
+  not by a list.
+- The fitter's hole limit is the policy knob `fit_holes` (default 3);
+  `program_proposers` is in the default policy too.
+
 ## 0.1.30
 ### Changed
 - Fold groups come from search under the compression law alone:
