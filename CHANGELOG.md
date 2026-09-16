@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.1.20
+### Added
+- Data sources: `data/sources.sexp` lists directories of CSV files, URLs
+  and programs; `axiom ingest` imports whatever is new or changed (by
+  content hash, never twice); `axiom run [--every S] [--rounds N] [--push]`
+  ingests, evolves and publishes, and keeps doing so on a schedule.
+  Ingested worlds are worked on before bundled examples. Each import is
+  an `axiom/ingest` object.
+
 ## 0.1.19
 ### Added
 - Names: `axiom name <id> <text>` gives any object a name (an
