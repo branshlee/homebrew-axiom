@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.1.30
+### Changed
+- Fold groups come from search under the compression law alone:
+  hierarchical merging of kept theories (and of library entries, for
+  compaction) by the estimated saving of their anti-unification, using
+  the certificate's own cost formula, merging even where nothing is
+  saved yet; every group formed on the way that saves anything is a
+  candidate. The greedy newest-first partition, the same-shape rule and
+  the shared-literal subgroups are gone.
+
 ## 0.1.29
 ### Changed
 - Task kinds are data. Each file in `data/tasks` names a collection of
