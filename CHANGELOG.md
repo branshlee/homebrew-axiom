@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.1.27
+### Changed
+- View projections are data. A `:view` names the events whose subjects
+  are its rows (`:events promoted`) and gives `:input`, `:output` and
+  `:key` as projection expressions over the subject (`subject`,
+  `(field E name…)`, `(term E)`, `(expanded E)`, `(shape E)`,
+  `(evidence E)`, `(world E)`, `(count E)`); the three built-in
+  collections are gone. `:variable` names the world's variable.
+- Candidate rules for `improve` come from the same enumerator that
+  proposes theories, over the alphabet in
+  `data/experiments/rule-search.sexp`; the two-level boolean grammar in
+  code is gone.
+- Improving the rules is a task: `improve:<spec>` is discovered every
+  `:every` rounds of the rule-search spec (default 100; `:improve` in an
+  experiment spec names it, `policy-search` by default when that file
+  exists), tried and recorded like any task (`policy-tried` event,
+  adoption as before). `axiom improve` remains as a manual trigger.
+
 ## 0.1.26
 ### Changed
 - The built-in analogy, library-first and mutate members are gone from
