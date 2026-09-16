@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.1.25
+### Changed
+- The pipeline is gone. A unit of work is a task discovered in the store:
+  explain a world, fold a coherent group, re-represent a theory through
+  the library, compact the library, derive a residual world, compose a
+  solved residual with its parent. Each is claimed, done and recorded
+  (`axiom/task` objects with the state before and after) by whichever
+  worker takes it; which task goes first is the policy rule `task_score`
+  over (gain, kind), default `gain`. `evolve --rounds N` now runs N units
+  of work of any kind; rounds are the explain tasks. Merges keep working
+  on old and new histories alike.
+- A worker that loses a claim race looks again at once instead of
+  counting it as nothing to do; the file store tolerates two workers
+  writing the same object at the same time.
+- Rounds record `synthesis_residuals` (what derive tasks look at).
+
 ## 0.1.24
 ### Added
 - Any object set is a world: a world file may carry a `:view` naming a
