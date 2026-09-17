@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.1.33
+### Added
+- Reflection in the calculus: a term's shape is a value (`kernel::reflect`),
+  and three operators let a program look at its own terms: `(eval shape
+  input)` runs a shape on an input (`nil` if it cannot; the budget still
+  bounds it), `(subst shape hole with)` fills a hole, `(holes shape)`
+  lists them. Library uses in shapes carry the full id.
+- The `refit` seed proposer: a fitting strategy written in the calculus
+  with reflection (every way of filling a precedent's holes from
+  `constants`, scored by the evidence it reproduces). It wins the second
+  round of the team test outright. Programs see `constants` (the
+  alphabet's and the evidence's).
+- `scripts/gen-worlds2.py`: worlds beyond the enumeration budget (compositions
+  of two or three base laws) after a stage of base laws.
+### Changed
+- The explain kind ranks a fresh world before any retry.
+
 ## 0.1.32
 ### Added
 - Scale experiment tooling: `scripts/gen-worlds.py` (families of integer
